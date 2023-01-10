@@ -1,3 +1,16 @@
-controllers:
-    resource: ../src/Controller/
-    type: attribute
+index:
+    path: /index
+    controller: App\Controller\HomeController::index
+
+animals:
+    path: /animals/{name?}/{surname}
+    controller: App\Controller\HomeController::animals
+    defaults: { name: 'User', surname: 'Default'}
+    methods: [POST, GET]
+    requirements: 
+        name: '[a-zA-Z]+'
+        surname: '[0-9]+'
+
+redirigir:
+    path: /redirigir
+    controller: App\Controller\HomeController::redirigir

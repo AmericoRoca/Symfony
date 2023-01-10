@@ -13,6 +13,22 @@ class HomeController extends AbstractController
     {
         return $this->render('home/index.html.twig', [
             'controller_name' => 'HomeController',
+            'hello' => 'Hello world with symfony'
         ]);
+    }
+
+    public function animals($name, $surname){
+        $title = 'Welcome to the animals page';
+
+        return $this->render('home/animals.html.twig', [ 
+            'title' => $title,
+            'name' => $name,
+            'surname' =>$surname
+        ]);
+    }
+
+    public function redirigir(){
+        //return $this->redirect('index');
+        return $this->redirect('https://www.google.com');
     }
 }
